@@ -1,0 +1,60 @@
+<html>
+<body background="https://cdn.vox-cdn.com/thumbor/83Dtie1Snl88k4NGqsLJw51QvAE=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/15260067/shutterstock_thermometer.0.0.1546583026.jpg">
+    <h1>TEMPARATURE CONVERTER</h1>
+    <h2>Enter the temperature value </h2>
+   <p>
+    <label>Temperature in fahrenheit</label>
+    <input id="inputFahrenheit" type="number" placeholder="" oninput="temperatureConverter1(this.value)" onchange="temperatureConverter1(this.value)">
+  </p>
+ 
+  <p>Result in celcius: <span id="outputCelcius1"></span></p>
+  <p>Result in Kelvin: <span id="outputkelvin1"></span></p>
+  <p>
+    <label>Temperature in Kelvin</label>
+    <input id="inputKelvin" type="number" placeholder="" oninput="temperatureConverter3(this.value)" onchange="temperatureConverter3(this.value)">
+  </p>
+ 
+  <p>Result in Celcius: <span id="outputCelcius2"></span></p>
+  <p>Result in Fahrenheit : <span id="outputFahrenheit2"></span></p>
+  <p>
+    <label>Temperature in Celcius</label>
+    <input id="inputFahrenheit" type="number" placeholder="" oninput="temperatureConverter2(this.value)" onchange="temperatureConverter2(this.value)">
+  </p>
+ 
+  <p>Result in Fahrenheit: <span id="outputFahrenheit1"></span></p>
+  <p>Result in Kelvin: <span id="outputkelvin2"></span></p>
+  <script>
+  function temperatureConverter1(valNum) {
+    valNum = parseFloat(valNum);
+    document.getElementById("outputFahrenheit1").innerHTML="";
+    document.getElementById("outputkelvin2").innerHTML="";
+    document.getElementById("outputFahrenheit2").innerHTML="";
+    document.getElementById("outputCelcius2").innerHTML="";
+    document.getElementById("outputCelcius1").innerHTML=(valNum-32)/1.8;
+    document.getElementById("outputkelvin1").innerHTML=(valNum+459.67)/1.8;
+    
+  }
+  function temperatureConverter2(valNum1) {
+    valNum1 = parseFloat(valNum1);
+    document.getElementById("outputCelcius1").innerHTML="";
+    document.getElementById("outputkelvin1").innerHTML="";
+    document.getElementById("outputFahrenheit2").innerHTML="";
+    document.getElementById("outputCelcius2").innerHTML="";
+    document.getElementById("outputFahrenheit1").innerHTML=(valNum1 *1.8)+32;
+    document.getElementById("outputkelvin2").innerHTML=(valNum1+273.15);
+  }
+  function temperatureConverter3(valNum2) {
+    valNum2 = parseFloat(valNum2);
+    document.getElementById("outputCelcius1").innerHTML="";
+    document.getElementById("outputkelvin1").innerHTML="";
+    document.getElementById("outputFahrenheit1").innerHTML="";
+    document.getElementById("outputkelvin2").innerHTML="";
+    document.getElementById("outputFahrenheit2").innerHTML=(valNum2 *1.8)-459;
+    document.getElementById("outputCelcius2").innerHTML=(valNum2-273);
+  }
+  </script>
+  
+    
+    </body>
+    </html>
+    
